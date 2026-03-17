@@ -15,9 +15,9 @@
 
            IF OPERATION-TYPE = 'READ'
                MOVE STORAGE-BALANCE TO BALANCE
-
-           ELSE IF OPERATION-TYPE = 'WRITE'
-               MOVE BALANCE TO STORAGE-BALANCE
-
+           ELSE
+               IF OPERATION-TYPE = 'WRITE'
+                   MOVE BALANCE TO STORAGE-BALANCE
+               END-IF
            END-IF
            GOBACK.
